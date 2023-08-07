@@ -7,19 +7,19 @@
   </ol>
 <%end %>
 
-<%= form_with(model: @article, locale: true) do |f| %>
-  <p>
-    <%= f.label :title %>
-    <br/>
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :description %>
-    <br/>
-    <%= f.text_area :description %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+<div class="container-fluid ">
+  <%= form_with(model: @article, locale: true) do |f| %>
+    <div class="mb-3 w-50">
+      <%= f.label :title, class: "form-label" %>
+      <%= f.text_field :title, class: "form-control" %>
+    </div>
 
-<% end %>
+    <div class="mb-3 w-50">
+      <%= f.label :description, class: "form-label" %>
+      <%= f.text_area :description, class: "form-control" %>
+    </div>
+
+    <%= f.submit "Save",  :class => 'btn btn-primary'  %>
+
+  <% end %>
+</div>
